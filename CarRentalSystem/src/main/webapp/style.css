@@ -1,0 +1,166 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fullscreen Gradient Background Animation */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background: #f1f1f1;
+    color: #333;
+    position: relative;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #6a11cb, #2575fc, #ff416c, #ff4b2b);
+    background-size: 600% 600%;
+    z-index: -1;
+    animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container Styles */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 420px;
+    width: 100%;
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Tabs Styling */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #003d7a;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 15px;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    background-color: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.4s ease;
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+.tab-button.active {
+    background-color: #ff4b2b;
+}
+
+/* Form Container */
+.form-container {
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+}
+
+/* Form Styling */
+.form {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.form.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #2575fc;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #ff4b2b;
+    outline: none;
+    box-shadow: 0 4px 10px rgba(255, 75, 43, 0.1);
+}
+
+button {
+    padding: 14px;
+    background: linear-gradient(135deg, #6a11cb, #ff416c);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5a0ecb, #ff4b2b);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.switch a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.switch a:hover {
+    color: #ff416c;
+}
+
+@media (max-width: 500px) {
+    .container {
+        max-width: 90%;
+    }
+}
